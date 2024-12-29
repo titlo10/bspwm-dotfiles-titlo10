@@ -2,45 +2,29 @@
 
 # reloads sxhkd configuration:
 super + Escape + r
-    pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config' -t 1500
+    pkill -USR1 -x sxhkd
 
 # Launch Terminal
 super + Return
-    alacritty
+	kitty
 
 # Hide or Unhide Polybar
 super + p
 	sh $HOME/bin/toggle-polybar
-
-# Set random wallpaper
-super + w
-	sh $HOME/bin/random_wallpaper
-
-# Change language
-Alt_L + shift
-	sh $HOME/bin/change_language.sh
-
-Shift_L + alt
-	sh $HOME/bin/change_language.sh
     
 # Launch Rofi Menu
 super + {d,x}
     {rofi -show drun,sh $HOME/bin/powermenu}
 
 # Launch Applications
-super + shift + {f,n,p,t,c,v,i,x,q,k,l}
-	{firefox, \
-	thunar, \
-	pavucontrol, \
-	telegram-desktop, \
-	code, \
-	virtualbox, \
-	firefox --private-window, \
-	sh $HOME/bin/xcolor-pick, \
-	sh $HOME/bin/bible, \
-	alacritty -e calcurse, \
-	sh $HOME/bin/screen-lock}
+super + shift + {t, m, b}
+	{telegram-desktop, \
+	kitty -e calcurse, \
+	chromium}
      
+super + e
+	{thunar}
+
 # Select window to close
 ctrl + super + alt + k
 	{xkill}
@@ -48,10 +32,6 @@ ctrl + super + alt + k
 # Volume controls
 XF86Audio{RaiseVolume,LowerVolume,Mute}
     sh $HOME/bin/volume{ --up, --down, --toggle}
-
-# Brightness controls
-XF86MonBrightness{Up,Down}
-    sh $HOME/bin/brightness{ --up, --down}
 
 # screenshot
 Print
@@ -129,11 +109,6 @@ super + control {h,j,k,l}
 # Send the window to another edge of the screen
 super + {_,alt + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
-
-# move a floating window
-# TODO: Вызывает конфликт с другими комбинациями 
-#super + x + {h,j,k,l}
-# 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
