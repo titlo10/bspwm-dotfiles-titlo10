@@ -4,11 +4,11 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # fix some Java applications
-# wmname LG3D
+wmname LG3D
 
 # workspaces
-bspc monitor primary -d 1 2 3 4 5 6 7
-bspc monitor LVDS-1 -d 7  # TODO: multiple monitors
+bspc monitor -d 1 2 3 4 5 6 7
+#bspc monitor LVDS-1 -d 7  
 
 bspc config focus_follows_pointer true
 
@@ -42,20 +42,14 @@ bspc rule -a feh state=floating
 # start resources
 xrdb merge ~/.Xresources
 
-# python script to always initialize with a different wallpaper:
-# TODO: Add loading of basic scripts
-~/.config/bspwm/scripts/launch.sh &
-~/.config/polybar/launch.sh
-
-# launch notification daemon
-dunst -config $HOME/.config/bspwm/dunstrc &
-
-# launch battery tracker and redshift
-pkill battery-alert; ~/bin/battery-alert &
-pgrep -x redshift > /dev/null || redshift &
+# launch polybar
+~/.config/polybar/launch.sh & 
 
 # start compositor
 picom --config $HOME/.config/bspwm/picom_configurations/1.conf &
+
+# set default wallpaper
+feh --no-fehbg --bg-fill "$HOME/Wallpapers/current.png"
 
 # autostart
 flameshot &
