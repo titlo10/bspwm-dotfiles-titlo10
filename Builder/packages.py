@@ -7,7 +7,7 @@ BASE_PACKAGES = [
     "xfce4-power-manager", "xfce4-settings", "vlc", "picom", "alsa-plugins", "alsa-tools", "alsa-utils", "xclip", "libreoffice-fresh",
     "breeze", "ttf-jetbrains-mono", "ttf-jetbrains-mono-nerd", "ttf-fira-code",
     "ttf-iosevka-nerd", "telegram-desktop", "neovim", "obs-studio", "discord",
-    "flameshot", "starship", "calcurse", "gtk2", "gtk3", "gtk4" 
+    "flameshot", "starship", "gtk2", "gtk3", "gtk4", "openssh", "pokemon-colorscripts-git" 
 ]
 
 
