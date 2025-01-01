@@ -4,9 +4,10 @@
 super + Escape + r
     pkill -USR1 -x sxhkd
 
-# Launch Terminal
-super + Return
-	kitty
+# Launch System Applications
+super + {Return, e}
+	{kitty, \
+	thunar}
 
 # Hide or Unhide Polybar
 super + p
@@ -17,14 +18,13 @@ super + {d,x}
     {rofi -show drun,sh $HOME/bin/powermenu}
 
 # Launch Applications
-super + shift + {t, m, b}
+super + shift + {t, m, b, n, d}
 	{telegram-desktop, \
 	kitty -e calcurse, \
-	chromium}
+	chromium, \
+	kitty -e sudo nekobox, \
+	discord}
      
-super + e
-	{thunar}
-
 # Select window to close
 ctrl + super + alt + k
 	{xkill}
