@@ -29,10 +29,6 @@ super + shift + {t, m, b, n, d}
 ctrl + super + alt + k
 	{xkill}
 
-# Volume controls
-XF86Audio{RaiseVolume,LowerVolume,Mute}
-    sh $HOME/bin/volume{ --up, --down, --toggle}
-
 # screenshot
 Print
     flameshot gui
