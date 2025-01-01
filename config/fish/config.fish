@@ -1,6 +1,3 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
 alias ff="fastfetch"
 alias update="yay"
 alias cat="bat"
@@ -11,3 +8,4 @@ set -gx VISUAL nvim
 set -gx BROWSER /usr/bin/chromium
 set fish_color_command green
 starship init fish | source
+pokemon-colorscripts --no-title -s -r
