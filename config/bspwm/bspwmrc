@@ -1,6 +1,5 @@
 #! /bin/sh
 
-
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # fix some Java applications
@@ -52,5 +51,5 @@ picom --config $HOME/.config/bspwm/picom_configurations/1.conf &
 feh --no-fehbg --bg-fill "$HOME/Wallpapers/current.png"
 
 # autostart
-flameshot &
+flameshot & xset -dpms & xset s off &
 
